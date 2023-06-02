@@ -5,11 +5,13 @@ exports.deterministicPartitionKey = (event) => {
   const MAX_PARTITION_KEY_LENGTH = 256;
   let partitionKey;
 
-  if (event && event.partitionKey) {
-    partitionKey = event.partitionKey;
-  } else {
-    const data = JSON.stringify(event);
-    partitionKey = crypto.createHash("sha3-512").update(data).digest("hex");
+  if (event) {
+    if (event.partitionKey) {
+      partitionKey = event.partitionKey;
+    } else {
+      const data = JSON.stringify(event);
+      partitionKey = crypto.createHash("sha3-512").update(data).digest("hex");
+    }
   }
 
   if (!partitionKey) {
