@@ -3,6 +3,7 @@ const crypto = require("crypto");
 exports.deterministicPartitionKey = (event) => {
   const TRIVIAL_PARTITION_KEY = "0";
   const MAX_PARTITION_KEY_LENGTH = 256;
+  // Updated variable names providing clarity about the purpose of it. This improves the understanding of the code's logic
   let partitionKey;
 
   if (event) {
@@ -14,6 +15,7 @@ exports.deterministicPartitionKey = (event) => {
     }
   }
 
+  // Updated conditional logic by simplifying and consolidating to reduce complexity.
   if (!partitionKey) {
     partitionKey = TRIVIAL_PARTITION_KEY;
   }
