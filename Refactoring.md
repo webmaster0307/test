@@ -9,3 +9,11 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+First, descriptive variable names were introduced, providing clarity about the purpose of each variable. This improves the understanding of the code's logic.
+
+The conditional statements were simplified and consolidated to reduce complexity. By combining similar conditions and checking for falsy/truthy values, the code becomes easier to follow.
+
+Furthermore, the corrected unit tests ensure that all scenarios are covered, including edge cases such as long partition keys and null event inputs.
+
+Overall, these changes make the code more readable by using meaningful variable names, simplifying conditionals, and providing comprehensive test coverage. This improves the code's maintainability and readability.
